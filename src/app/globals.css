@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body{
+    @apply bg-customBlue;
+    @apply text-white;
+  }
+
+  main{
+    @apply flex flex-col max-w-2xl ml-auto mr-auto justify-center m-auto max-w-screen-2xl p-5;
+  }
+
+  h1{
+    @apply ml-auto mr-auto text-left mb-5 font-semibold text-3xl;
+  }
+
+  h2{
+    @apply text-2xl;
+    @apply font-medium;
+    @apply md:mb-5;
+  }
+
+  h3{
+    @apply text-xl;
+    @apply font-medium;
+    @apply md:mb-5;
+  }
+
+  p {
+    @apply mb-5;
+  }
+
+  button{
+    @apply bg-customGreen text-white font-semibold pt-2.5 pb-2.5 pl-5 pr-5 m-1 border-customGreen border hover:bg-amber-900 hover:border-amber-900 rounded-2xl;    
+  }
+
+  form{
+    @apply my-10;    
+  }
+
+  label{
+    @apply m-1;    
+  }
+
+  input{
+    @apply m-1 p-1 text-customBlue;    
+  }
+
+
+
+}
+
+
