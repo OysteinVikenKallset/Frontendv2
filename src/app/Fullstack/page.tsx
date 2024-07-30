@@ -99,7 +99,7 @@ export default function Fullstack() {
      */
 
     const usersGet = () => {
-        axios.get('http://localhost:5177/api/Users')
+        axios.get('https://kallsetbackendversjon2.azurewebsites.net/api/Users')
             .then(response => {
                 // Behandle responsen her
                 console.log(response.data);
@@ -113,7 +113,7 @@ export default function Fullstack() {
     }
 
     const userPost = (newName: string, newAdress: string, newPhone: string, newBirthday: string) => {
-        axios.post('http://localhost:5177/api/Users', {
+        axios.post('https://kallsetbackendversjon2.azurewebsites.net/api/Users', {
             id: 0,
             name: newName,
             address: newAdress,
@@ -131,7 +131,7 @@ export default function Fullstack() {
     }
 
     const usersPut = () => {
-        axios.put(`http://localhost:5177/api/Users/${editingUserId}`, {
+        axios.put(`https://kallsetbackendversjon2.azurewebsites.net/api/Users/${editingUserId}`, {
             id: editingUserId,
             name: editedUser.name,
             address: editedUser.address,
@@ -149,7 +149,7 @@ export default function Fullstack() {
     }
 
     const usersDelete = (userId: number) => {
-        axios.delete(`http://localhost:5177/api/Users/${userId}`)
+        axios.delete(`https://kallsetbackendversjon2.azurewebsites.net/api/Users/${userId}`)
             .then(response => {
                 console.log(response.data);
                 usersGet();
@@ -190,7 +190,6 @@ export default function Fullstack() {
         <div>
             <h1>Frontend og backend</h1>
            
-            
             <form onSubmit={handleSubmit}>
                 <div className='flex flex-col'>
                     <label htmlFor="name">Navn<span className='text-red-500'> *</span></label>
@@ -251,6 +250,7 @@ export default function Fullstack() {
 
             </div>
         </div>
-
+        dotnet ef migrations add InitialCreate
+        dotnet ef database update
     )
 }
