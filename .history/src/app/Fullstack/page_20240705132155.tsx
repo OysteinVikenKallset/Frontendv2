@@ -99,7 +99,7 @@ export default function Fullstack() {
      */
 
     const usersGet = () => {
-        axios.get('http://localhost:5177/api/Users')
+        axios.get('https://users20240705123504.azurewebsites.net/api/Users')
             .then(response => {
                 // Behandle responsen her
                 console.log(response.data);
@@ -113,7 +113,7 @@ export default function Fullstack() {
     }
 
     const userPost = (newName: string, newAdress: string, newPhone: string, newBirthday: string) => {
-        axios.post('http://localhost:5177/api/Users', {
+        axios.post('https://users20240705123504.azurewebsites.net/api/Users', {
             id: 0,
             name: newName,
             address: newAdress,
@@ -131,7 +131,7 @@ export default function Fullstack() {
     }
 
     const usersPut = () => {
-        axios.put(`http://localhost:5177/api/Users/${editingUserId}`, {
+        axios.put(`https://users20240705123504.azurewebsites.net/api/Users/${editingUserId}`, {
             id: editingUserId,
             name: editedUser.name,
             address: editedUser.address,
@@ -149,7 +149,7 @@ export default function Fullstack() {
     }
 
     const usersDelete = (userId: number) => {
-        axios.delete(`http://localhost:5177/api/Users/${userId}`)
+        axios.delete(`https://users20240705123504.azurewebsites.net/api/Users/${userId}`)
             .then(response => {
                 console.log(response.data);
                 usersGet();
@@ -244,7 +244,7 @@ export default function Fullstack() {
             </div>
 
             <div>
-                <h2>Statistikk</h2>
+                <h2>Statistik</h2>
                 <p>Gjennomsnittlig lengde på navn: {averageNameLength}</p>
                 <p>Antall personer født i skuddår: {leapYearBirthdays}</p>
                 <p>Totalt antall brukere: {totalUsers}</p>
