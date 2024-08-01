@@ -34,19 +34,6 @@ export default function RootLayout({
       <main className="">
        {children}
       </main>
-      <footer className="mt-8 mb-8">
-      <ul className="flex justify-center flex-row gap-2 font-semibold underline">
-      <li>
-        <Link className="p-2 hover:bg-customGreen" href="/">Hjem</Link>
-      </li>
-      <li>
-        <Link className="p-2 hover:bg-customGreen" href="/NumberStepper">Number Stepper</Link>
-      </li>
-      <li>
-        <Link className="p-2 hover:bg-customGreen" href="/Fullstack">Fullstack</Link>
-      </li>
-    </ul>
-      </footer>
       </body>
     </html>
   );
