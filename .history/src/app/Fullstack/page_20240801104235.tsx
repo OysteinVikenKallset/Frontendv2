@@ -224,9 +224,9 @@ export default function Fullstack() {
                                     <ul key={user.id} className='mb-4'>
                                         <li > <span className='font-semibold'>Id: </span> {user.id}</li>
                                         <li > <span className='font-semibold'>Address: </span>{user.address}</li>
-                                        <li > <span className='font-semibold'>Telefon: </span>{user.phone}</li>
+                                        <li > <span className='font-semibold'>Phone: </span>{user.phone}</li>
                                         <li > <span className='font-semibold'>Birthday: </span>{formatDate(user.birthday)}</li>
-                                        <li > <span className='font-semibold'>Tverrsum av tlf: </span>{user.phoneDigitSum}</li>
+                                        <li > <span className='font-semibold'>Tverrsum av telefonnummer: </span>{user.phoneDigitSum}</li>
                                         <li > <span className='font-semibold'>Skuddår: </span>{user.isLeapYearBirthday ? 'Ja' : 'Nei'}</li>
                                     </ul>
                                     <div className='flex justify-center'>
