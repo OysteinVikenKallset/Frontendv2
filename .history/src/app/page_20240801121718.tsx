@@ -37,7 +37,7 @@ export default function Home() {
 
   const numberStepper = new Project(
     "Number stepper",
-    "Denne løsningen definerer en React-komponent som lar brukeren justere dato og tid ved hjelp av forskjellige knapper.",
+    "Denne løsningen definerer en React-komponent som lar brukeren justere dato og tid ved hjelp av forskjellige knapper. Her er en kortfattet beskrivelse av funksjonaliteten:",
     "/NumberStepper",
     "Gå til Number stepper",
     fullstackFrontendTechnologies,
@@ -50,42 +50,44 @@ export default function Home() {
 
   const ProjectComponent: React.FC<ProjectProps> = ({ project }) => {
     return (
-      <div className="flex flex-col justify-between pt-2 pb-2 pl-4 pr-4 m-2 rounded-3xl bg-amber-200 text-black w-full lg: max-w-md lg:w-fit">
-        <h2><span className="font-semibold mb-2">Prosjekt: </span>{project.name}</h2>
-        <p>{project.description}</p>
+      <div className="flex flex-col justify-between pt-2 pb-2 pl-4 pr-4 m-2 rounded-3xl bg-amber-200 text-black w-full lg:w-fit">
+        <h2><span className="font-semibold">Prosjekt: </span>{project.name}</h2>
         <div className="flex flex-row">
           {project.frontendTechnologies.length > 0 && (
-            <div className="pr-2">
-              <h3>Frontend</h3>
-              <ul className="mb-4">
-                {project.frontendTechnologies.map((tech, index) => (
-                  <li key={index}>{tech}</li>
-                ))}
-              </ul>
-            </div>
-          )}
-          {project.backendTechnologies.length > 0 && (
-            <div className="pr-2">
-              <h3>Backend</h3>
-              <ul className="mb-4">
-                {project.backendTechnologies.map((tech, index) => (
-                  <li key={index}>{tech}</li>
-                ))}
-              </ul>
-            </div>
+           
+              <div className="pr-2">
+                <h3>Frontend</h3>
+                <ul className="mb-4">
+                  {project.frontendTechnologies.map((tech, index) => (
+                    <li key={index}>{tech}</li>
+                  ))}
+                </ul>
+              </div>
+              
+           
+        )}
+                {project.backendTechnologies.length > 0 && (
+                  <div>
+                    <h3>Backend</h3>
+                    <ul className="mb-4">
+                      {project.backendTechnologies.map((tech, index) => (
+                        <li key={index}>{tech}</li>
+                      ))}
+                    </ul>
+                  </div>
 
-          )}
-        </div>
-        <Link className="link" href={project.link}>{project.buttonLabel}</Link>
-      </div>
-    );
+                )}
+              </div>
+              <Link className="link" href={project.link}>{project.buttonLabel}</Link>
+            </div>
+          );
   };
 
-  return (
-    <div className='flex flex-row flex-wrap '>
+          return (
+          <div className='flex flex-row flex-wrap '>
 
-      <ProjectComponent project={fullstack} />
-      <ProjectComponent project={numberStepper} />
-    </div>
-  );
+            <ProjectComponent project={fullstack} />
+            <ProjectComponent project={numberStepper} />
+          </div>
+          );
 }

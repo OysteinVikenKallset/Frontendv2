@@ -28,7 +28,7 @@
   }
 
   button{
-    @apply flex justify-center text-center bg-customGreen text-white font-semibold pt-2.5 pb-2.5 pl-5 pr-5 m-1 border-customGreen border hover:bg-amber-900 hover:border-amber-900 rounded-2xl;    
+   
   }
 
   form{
@@ -44,7 +44,7 @@
   }
 
   .link{
-    @apply flex justify-center bg-customGreen text-white font-semibold pt-2.5 pb-2.5 pl-5 pr-5 m-1 border-customGreen border hover:bg-amber-900 hover:border-amber-900 rounded-2xl;    
+    @apply bg-customGreen text-white font-semibold pt-2.5 pb-2.5 pl-5 pr-5 m-1 border-customGreen border hover:bg-amber-900 hover:border-amber-900 rounded-2xl;    
   }
 
 

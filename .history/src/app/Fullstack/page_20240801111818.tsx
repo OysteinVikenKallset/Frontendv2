@@ -15,8 +15,8 @@ type User = {
 
 export default function Fullstack() {
     const [name, setName] = useState("Petter");
-    const [address, setaddress] = useState("Bergen");
-    const [phone, setPhone] = useState("123455678");
+    const [address, setaddress] = useState("Tiller");
+    const [phone, setPhone] = useState("97562249");
     const [birthday, setBirthday] = useState("1990-01-01");
     /*const [leapYear, setLeapYear] = useState("");
     const [tverrsum, setTverrsum] = useState(0);*/
@@ -244,8 +244,8 @@ export default function Fullstack() {
             <div className='pt-4'>
                 <h2>Statistikk</h2>
                 <p className='mb-0'>Gjennomsnittlig lengde på navn: {averageNameLength}</p>
-                <p className='mb-0'>Antall personer født i skuddår: {leapYearBirthdays}</p>
-                <p className='mb-0'>Totalt antall brukere: {totalUsers}</p>
+                <p>Antall personer født i skuddår: {leapYearBirthdays}</p>
+                <p>Totalt antall brukere: {totalUsers}</p>
 
             </div>
         </div>
