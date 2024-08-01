@@ -223,11 +223,16 @@ export default function Fullstack() {
                                     <h3 className='font-semibold text-center mb-0'>{user.name}</h3>
                                     <ul key={user.id} className='mb-4'>
                                         <li > <span className='font-semibold'>Id: </span> {user.id}</li>
+                                        
                                         <li > <span className='font-semibold'>Address: </span>{user.address}</li>
                                         <li > <span className='font-semibold'>Phone: </span>{user.phone}</li>
                                         <li > <span className='font-semibold'>Birthday: </span>{formatDate(user.birthday)}</li>
                                         <li > <span className='font-semibold'>Tverrsum: </span>{user.phoneDigitSum}</li>
                                         <li > <span className='font-semibold'>Skuddår: </span>{user.isLeapYearBirthday ? 'Ja' : 'Nei'}</li>
+                                        
+                                           
+
+                                        
                                     </ul>
                                     <div className='flex justify-center'>
                                     <button onClick={() => handleEditClick(user)}>Endre</button>

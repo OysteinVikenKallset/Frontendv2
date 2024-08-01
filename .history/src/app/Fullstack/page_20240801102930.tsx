@@ -208,7 +208,7 @@ export default function Fullstack() {
                 {users.length > 0 && (
                     <div className='flex flex-row flex-wrap'>
                         {users.map(user => (
-                            <div key={user.id} className='pt-2 pb-2 pl-4 pr-4 m-2 rounded-3xl bg-amber-200 text-black w-full lg:max-w-64'>
+                            <div key={user.id} className='p-5 m-2 rounded-3xl bg-amber-200 text-black w-full'>
                                 {editingUserId === user.id ? (
                                     // Vis input-felter for redigering
                                     <ul key={user.id} className='mt-2 mb-2'>
@@ -219,21 +219,22 @@ export default function Fullstack() {
                                         <li><button onClick={handleUpdateClick}>Oppdater</button></li>
                                     </ul>
                                 ) : (
-                                    <div>
-                                    <h3 className='font-semibold text-center mb-0'>{user.name}</h3>
-                                    <ul key={user.id} className='mb-4'>
+                                    <ul key={user.id} className='mt-2 mb-2'>
                                         <li > <span className='font-semibold'>Id: </span> {user.id}</li>
+                                        <li > <span className='font-semibold'>Navn: </span> {user.name}</li>
                                         <li > <span className='font-semibold'>Address: </span>{user.address}</li>
                                         <li > <span className='font-semibold'>Phone: </span>{user.phone}</li>
                                         <li > <span className='font-semibold'>Birthday: </span>{formatDate(user.birthday)}</li>
                                         <li > <span className='font-semibold'>Tverrsum: </span>{user.phoneDigitSum}</li>
                                         <li > <span className='font-semibold'>Skuddår: </span>{user.isLeapYearBirthday ? 'Ja' : 'Nei'}</li>
+                                        <li>
+                                            <div>
+                                                <button onClick={() => handleEditClick(user)}>Endre</button>
+                                                <button onClick={() => usersDelete(user.id)}>Fjern</button>
+                                            </div>
+
+                                        </li>
                                     </ul>
-                                    <div className='flex justify-center'>
-                                    <button onClick={() => handleEditClick(user)}>Endre</button>
-                                    <button onClick={() => usersDelete(user.id)}>Fjern</button>
-                                </div>
-                                    </div>
                                 )}
                             </div>
                         ))}

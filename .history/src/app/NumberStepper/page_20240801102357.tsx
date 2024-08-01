@@ -63,24 +63,24 @@ const Page = () => {
                     onDecrement={decrementOneDay}
                 />
                 <DateAdjuster
-                    label="Timer"
-                    value={currentDate.format('HH')}
-                    onIncrement={incrementOneHour}
-                    onDecrement={decrementOneHour}
-                />
-                <DateAdjuster
-                    label="Minutter"
-                    value={currentDate.format('mm')}
-                    onIncrement={incrementOneMinute}
-                    onDecrement={decrementOneMinute}
-                />
-                <DateAdjuster
-                    label="Sekunder"
-                    value={currentDate.format('ss')}
-                    onIncrement={incrementOneSecond}
-                    onDecrement={decrementOneSecond}
-                />
-                <button className='w-fit' onClick={setToCurrentTime}>Sett til nåværende tidspunkt</button>
+                label="Timer"
+                value={currentDate.format('HH')}
+                onIncrement={incrementOneHour}
+                onDecrement={decrementOneHour}
+            />
+            <DateAdjuster
+            label="Minutter"
+            value={currentDate.format('mm')}
+            onIncrement={incrementOneMinute}
+            onDecrement={decrementOneMinute}
+        />
+        <DateAdjuster
+        label="Sekunder"
+        value={currentDate.format('ss')}
+        onIncrement={incrementOneSecond}
+        onDecrement={decrementOneSecond}
+    />
+    <button className='w-fit' onClick={setToCurrentTime}>Sett til nåværende tidspunkt</button>
             </div>
             <Task />
         </div>

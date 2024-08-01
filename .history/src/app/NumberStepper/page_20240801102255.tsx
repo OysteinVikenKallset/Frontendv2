@@ -1,9 +1,6 @@
 "use client"
 import React, { useState, useEffect } from 'react';
-import Task from './Task';
 import moment from 'moment';
-import 'moment/locale/nb'; // Importer det norske språket
-moment.locale('nb'); // Setter globalt språk til norsk
 import DateAdjuster from './DateAdjuster'; // Importer DateAdjuster-komponenten
 
 const Page = () => {
@@ -63,24 +60,24 @@ const Page = () => {
                     onDecrement={decrementOneDay}
                 />
                 <DateAdjuster
-                    label="Timer"
-                    value={currentDate.format('HH')}
-                    onIncrement={incrementOneHour}
-                    onDecrement={decrementOneHour}
-                />
-                <DateAdjuster
-                    label="Minutter"
-                    value={currentDate.format('mm')}
-                    onIncrement={incrementOneMinute}
-                    onDecrement={decrementOneMinute}
-                />
-                <DateAdjuster
-                    label="Sekunder"
-                    value={currentDate.format('ss')}
-                    onIncrement={incrementOneSecond}
-                    onDecrement={decrementOneSecond}
-                />
-                <button className='w-fit' onClick={setToCurrentTime}>Sett til nåværende tidspunkt</button>
+                label="Timer"
+                value={currentDate.format('HH')}
+                onIncrement={incrementOneHour}
+                onDecrement={decrementOneHour}
+            />
+            <DateAdjuster
+            label="Minutter"
+            value={currentDate.format('mm')}
+            onIncrement={incrementOneMinute}
+            onDecrement={decrementOneMinute}
+        />
+        <DateAdjuster
+        label="Sekunder"
+        value={currentDate.format('ss')}
+        onIncrement={incrementOneSecond}
+        onDecrement={decrementOneSecond}
+    />
+    <button className='w-fit' onClick={setToCurrentTime}>Sett til nåværende tidspunkt</button>
             </div>
             <Task />
         </div>
