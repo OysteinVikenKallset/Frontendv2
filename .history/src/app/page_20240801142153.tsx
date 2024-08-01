@@ -93,12 +93,11 @@ export default function Home() {
         <ProjectComponent project={fullstack} />
       </div>
     </div>
-    <div className="margin-auto mt-6 flex justify-center w-full flex-col">
-    <h2 className="text-center">Hosting</h2>
-      <div className='flex flex-col justify-between p-4 m-4 text-center rounded-3xl bg-amber-200 text-black'>
-      
-      <p className="mb-0 font-semibold"><Link href='https://vercel.com/'>vercel.com</Link></p>
-      <p className="mb-0 font-semibold"><Link href='https://azure.microsoft.com/'>azure.microsoft.com</Link></p>
+    <div>
+      <h2 className="text-center">Hosting</h2>
+      <div className='flex flex-row flex-wrap '>
+      <p>Frontend: Microsoft Azure</p>
+        <p>Backend: Microsoft Azure</p>
       </div>
     </div>
     </div>

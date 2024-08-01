@@ -203,7 +203,7 @@ export default function Fullstack() {
                     <button type="submit" value="Submit">Legg til bruker</button>
                 </div>
             </form>
-            <h2 className='text-center'>Brukere</h2>
+
             <div>
                 {users.length > 0 && (
                     <div className='flex flex-row flex-wrap'>
@@ -241,7 +241,7 @@ export default function Fullstack() {
                 )}
             </div>
 
-            <div className='pt-4 max-w-2xl m-auto'>
+            <div className='pt-4'>
                 <h2 className='text-underline'>Statistikk</h2>
                 <p className='mb-0'>Gjennomsnittlig lengde på navn: {averageNameLength}</p>
                 <p className='mb-0'>Antall personer født i skuddår: {leapYearBirthdays}</p>

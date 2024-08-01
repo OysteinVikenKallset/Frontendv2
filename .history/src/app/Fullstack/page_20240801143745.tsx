@@ -203,7 +203,7 @@ export default function Fullstack() {
                     <button type="submit" value="Submit">Legg til bruker</button>
                 </div>
             </form>
-            <h2 className='text-center'>Brukere</h2>
+            <h2>Brukere</h2>
             <div>
                 {users.length > 0 && (
                     <div className='flex flex-row flex-wrap'>

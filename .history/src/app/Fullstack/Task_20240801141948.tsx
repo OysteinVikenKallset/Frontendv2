@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 export default function task() {
     return (
         <div className='max-w-2xl m-auto mt-6'>
-        <h2 className='mb-6'>Oppgave</h2>
+        <h2 className='mb-2'>Oppgave</h2>
             <h2>Front-end:</h2>
             <ul>
                 <li className=' m-2 ml-6 list-disc'>Systemet skal kunne ta inn user input med følgende data (Navn, adresse, telefonnummer, fødselsdato)</li>
