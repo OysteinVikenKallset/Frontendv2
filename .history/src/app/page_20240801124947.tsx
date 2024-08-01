@@ -26,24 +26,22 @@ export default function Home() {
     }
   }
 
-
-
-  const numberStepper = new Project(
-    "1: Number stepper",
-    "Denne løsningen definerer en React-komponent som lar brukeren justere dato og tid ved hjelp av forskjellige knapper.",
-    "/NumberStepper",
-    "Gå til Number stepper",
-    fullstackFrontendTechnologies,
-    []
-  );
-
   const fullstack = new Project(
-    "2: Fullstack",
+    "Fullstack",
     "En fullstack applicasjon med frontend, backend og database",
     "/Fullstack",
     "Gå til fullstack",
     fullstackFrontendTechnologies,
     fullstackBackendTechnologies
+  );
+
+  const numberStepper = new Project(
+    "Number stepper",
+    "Denne løsningen definerer en React-komponent som lar brukeren justere dato og tid ved hjelp av forskjellige knapper.",
+    "/NumberStepper",
+    "Gå til Number stepper",
+    fullstackFrontendTechnologies,
+    []
   );
 
   interface ProjectProps {
@@ -52,9 +50,9 @@ export default function Home() {
 
   const ProjectComponent: React.FC<ProjectProps> = ({ project }) => {
     return (
-
+      
       <div className="flex flex-col justify-between pt-2 pb-2 pl-4 pr-4 m-2 rounded-3xl bg-amber-200 text-black w-full lg: max-w-md lg:w-fit">
-        <h2 className="text-center mb-2 mt-2">{project.name}</h2>
+        <h2>{project.name}</h2>
         <p>{project.description}</p>
         <div className="flex flex-row">
           {project.frontendTechnologies.length > 0 && (
@@ -85,13 +83,10 @@ export default function Home() {
   };
 
   return (
-    <div>
-      <h2 className="text-center">Prosjekter</h2>
-      <div className='flex flex-row flex-wrap '>
-        <ProjectComponent project={numberStepper} />
-        <ProjectComponent project={fullstack} />
-
-      </div>
+    <div className='flex flex-row flex-wrap '>
+<h2>Prosjekter</h2>
+      <ProjectComponent project={fullstack} />
+      <ProjectComponent project={numberStepper} />
     </div>
   );
 }

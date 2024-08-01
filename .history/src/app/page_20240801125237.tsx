@@ -88,9 +88,9 @@ export default function Home() {
     <div>
       <h2 className="text-center">Prosjekter</h2>
       <div className='flex flex-row flex-wrap '>
-        <ProjectComponent project={numberStepper} />
+      <ProjectComponent project={numberStepper} />
         <ProjectComponent project={fullstack} />
-
+        
       </div>
     </div>
   );

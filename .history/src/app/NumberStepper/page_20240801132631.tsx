@@ -8,39 +8,30 @@ import DateAdjuster from './DateAdjuster'; // Importer DateAdjuster-komponenten
 
 const Page = () => {
     const [currentDate, setCurrentDate] = useState(moment());
-    const [isMounted, setIsMounted] = useState(false);
 
-    const incrementOneYear = () => setCurrentDate(prevDate => moment(prevDate).add(1, 'year'));
-    const decrementOneYear = () => setCurrentDate(prevDate => moment(prevDate).subtract(1, 'year'));
-    const incrementOneMonth = () => setCurrentDate(prevDate => moment(prevDate).add(1, 'month'));
-    const decrementOneMonth = () => setCurrentDate(prevDate => moment(prevDate).subtract(1, 'month'));
-    const incrementOneDay = () => setCurrentDate(prevDate => moment(prevDate).add(1, 'day'));
-    const decrementOneDay = () => setCurrentDate(prevDate => moment(prevDate).subtract(1, 'day'));
-    const incrementOneHour = () => setCurrentDate(prevDate => moment(prevDate).add(1, 'hour'));
-    const decrementOneHour = () => setCurrentDate(prevDate => moment(prevDate).subtract(1, 'hour'));
-    const incrementOneMinute = () => setCurrentDate(prevDate => moment(prevDate).add(1, 'minute'));
-    const decrementOneMinute = () => setCurrentDate(prevDate => moment(prevDate).subtract(1, 'minute'));
-    const incrementOneSecond = () => setCurrentDate(prevDate => moment(prevDate).add(1, 'second'));
-    const decrementOneSecond = () => setCurrentDate(prevDate => moment(prevDate).subtract(1, 'second'));
-
+    const incrementOneYear = () => setCurrentDate(currentDate.clone().add(1, 'year'));
+    const decrementOneYear = () => setCurrentDate(currentDate.clone().subtract(1, 'year'));
+    const incrementOneMonth = () => setCurrentDate(currentDate.clone().add(1, 'month'));
+    const decrementOneMonth = () => setCurrentDate(currentDate.clone().subtract(1, 'month'));
+    const incrementOneDay = () => setCurrentDate(currentDate.clone().add(1, 'day'));
+    const decrementOneDay = () => setCurrentDate(currentDate.clone().subtract(1, 'day'));
+    const incrementOneHour = () => setCurrentDate(currentDate.clone().add(1, 'hour'));
+    const decrementOneHour = () => setCurrentDate(currentDate.clone().subtract(1, 'hour'));
+    const incrementOneMinute = () => setCurrentDate(currentDate.clone().add(1, 'minute'));
+    const decrementOneMinute = () => setCurrentDate(currentDate.clone().subtract(1, 'minute'));
+    const incrementOneSecond = () => setCurrentDate(currentDate.clone().add(1, 'second'));
+    const decrementOneSecond = () => setCurrentDate(currentDate.clone().subtract(1, 'second'));
 
     useEffect(() => {
-        setIsMounted(true);
-    }, []);
-
-    useEffect(() => {
-        if (!isMounted) return;
-
-        console.log("AddInterval");
         const timer = setInterval(() => {
-            incrementOneSecond();
+            setCurrentDate(moment());
         }, 1000);
 
         return () => {
             clearInterval(timer);
             console.log("ClearInterval");
         };
-    }, [isMounted]);
+    }, []);
 
     const setToCurrentTime = () => {
         // Antar at currentDate er definert som et moment-objekt eller en dato-streng som kan parses av moment
@@ -89,7 +80,7 @@ const Page = () => {
                     onIncrement={incrementOneSecond}
                     onDecrement={decrementOneSecond}
                 />
-                <button className='flex w-full flex-wrap content-center justify-items-center text-center justify-center flex-col' onClick={setToCurrentTime}>Sett til nåværende tidspunkt</button>
+                <button className='flex w-full content-center justify-items-center text-center justify-center flex-col' onClick={setToCurrentTime}>Sett til nåværende tidspunkt</button>
             </div>
             <Task />
         </div>

@@ -26,7 +26,14 @@ export default function Home() {
     }
   }
 
-
+  const fullstack = new Project(
+    "2: Fullstack",
+    "En fullstack applicasjon med frontend, backend og database",
+    "/Fullstack",
+    "Gå til fullstack",
+    fullstackFrontendTechnologies,
+    fullstackBackendTechnologies
+  );
 
   const numberStepper = new Project(
     "1: Number stepper",
@@ -35,15 +42,6 @@ export default function Home() {
     "Gå til Number stepper",
     fullstackFrontendTechnologies,
     []
-  );
-
-  const fullstack = new Project(
-    "2: Fullstack",
-    "En fullstack applicasjon med frontend, backend og database",
-    "/Fullstack",
-    "Gå til fullstack",
-    fullstackFrontendTechnologies,
-    fullstackBackendTechnologies
   );
 
   interface ProjectProps {
@@ -88,9 +86,9 @@ export default function Home() {
     <div>
       <h2 className="text-center">Prosjekter</h2>
       <div className='flex flex-row flex-wrap '>
-        <ProjectComponent project={numberStepper} />
-        <ProjectComponent project={fullstack} />
 
+        <ProjectComponent project={fullstack} />
+        <ProjectComponent project={numberStepper} />
       </div>
     </div>
   );

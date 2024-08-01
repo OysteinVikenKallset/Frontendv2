@@ -8,7 +8,6 @@ import DateAdjuster from './DateAdjuster'; // Importer DateAdjuster-komponenten
 
 const Page = () => {
     const [currentDate, setCurrentDate] = useState(moment());
-    const [isMounted, setIsMounted] = useState(false);
 
     const incrementOneYear = () => setCurrentDate(prevDate => moment(prevDate).add(1, 'year'));
     const decrementOneYear = () => setCurrentDate(prevDate => moment(prevDate).subtract(1, 'year'));
@@ -24,23 +23,6 @@ const Page = () => {
     const decrementOneSecond = () => setCurrentDate(prevDate => moment(prevDate).subtract(1, 'second'));
 
 
-    useEffect(() => {
-        setIsMounted(true);
-    }, []);
-
-    useEffect(() => {
-        if (!isMounted) return;
-
-        console.log("AddInterval");
-        const timer = setInterval(() => {
-            incrementOneSecond();
-        }, 1000);
-
-        return () => {
-            clearInterval(timer);
-            console.log("ClearInterval");
-        };
-    }, [isMounted]);
 
     const setToCurrentTime = () => {
         // Antar at currentDate er definert som et moment-objekt eller en dato-streng som kan parses av moment

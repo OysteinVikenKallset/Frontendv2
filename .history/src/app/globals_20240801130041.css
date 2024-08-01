@@ -4,11 +4,11 @@
 
 @layer base {
   body{
-    @apply bg-customBlue text-white;
+    @apply bg-customBlue text-white font-sans;
   }
 
   main{
-    @apply font-sans flex flex-col max-w-2xl ml-auto mr-auto justify-center m-auto max-w-screen-2xl p-5;
+    @apply flex flex-col max-w-2xl ml-auto mr-auto justify-center m-auto max-w-screen-2xl p-5;
   }
 
   h1{
